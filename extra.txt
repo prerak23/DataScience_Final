@@ -1,0 +1,14 @@
+authors=[xp for xp in x]
+print(authors)
+xps=main_part[0].select('li')
+books_name=[xk for xk in xps if "(English)" in xk.get_text()]
+print(books_name)
+before_final_links=[]
+books_name_english=[]
+for xp in xps:
+    if "(English)" in xp.get_text():
+        index_to_link=str(xp.select('a')[0]).find("href")
+        index_to_link2 = str(xp.select('a')[0]).find(">")
+        before_final_links.append(str(xp.select('a')[0])[index_to_link+6:index_to_link2-1])
+        books_name_english.append(xp.select('a')[0].get_text())
+print(before_final_links)
