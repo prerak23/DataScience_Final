@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import wikipedia
 kl=open("links.txt")
 dictio=eval(kl.read())
@@ -30,7 +31,7 @@ for x in dictio:
             summary=""
         print(summary)
         summary_with_diffrent_lang.append(summary)
-    ds_with_author_summary['x']=summary_with_diffrent_lang
+    ds_with_author_summary[x]=summary_with_diffrent_lang
 
 with open("summary.txt","w+",encoding='utf8') as fof:
     fof.write(str(ds_with_author_summary))
